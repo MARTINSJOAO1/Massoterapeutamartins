@@ -1,0 +1,2 @@
+meuarquivo.zip filter=lfs diff=lfs merge=lfs -text
+*site.zip filter=lfs diff=lfs merge=lfs -text
