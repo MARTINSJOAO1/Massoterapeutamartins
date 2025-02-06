@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Massoterapia</title>
+    <!-- Adicionando o favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon"> <!-- Se a imagem for .png, use "image/png" -->
+    
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Estilos para as imagens */
+        .service img {
+            width: 100%;
+            max-width: 300px;
+            height: 200px;
+            object-fit: cover;
+            margin-bottom: 15px;
+            border-radius: 8px;
+        }
+
+        .about-img {
+            width: 100%;
+            max-width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Estilo da seção de serviços */
+        #services {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            padding: 20px;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .service {
+            flex: 1 1 calc(33% - 20px);
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .service h3 {
+            margin-top: 10px;
+            font-size: 1.2rem;
+        }
+
+        .service p {
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        @media (max-width: 768px) {
+            .service {
+                flex: 1 1 calc(50% - 20px);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .service {
+                flex: 1 1 100%;
+            }
+        }
+
+        /* Estilos do botão do WhatsApp */
+        .whatsapp-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25D366;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 50px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            z-index: 1000;
+            transition: transform 0.3s ease;
+        }
+
+        /* Remove a linha de baixo do link */
+        .whatsapp-button a {
+            text-decoration: none;
+            color: white; /* Mantém a cor do texto do link */
+            display: flex;
+            align-items: center; /* Garante que a logo e o texto fiquem alinhados */
+            justify-content: center;
+        }
+
+        .whatsapp-button:hover {
+            transform: scale(1.1);
+        }
+
+        .whatsapp-button img {
+            width: 24px;
+            margin-right: 8px; /* Espaçamento entre a logo e o texto */
+        }
+
+        .whatsapp-button span {
+            font-size: 16px;
+        }
+
+        /* Animação para os cards de benefícios */
+        .benefit-card {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s forwards;
+        }
+
+        /* Keyframes para animação */
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Estilos da seção de benefícios */
+        #benefits {
+            padding: 40px 20px;
+            background-color: #f1f1f1;
+            text-align: center;
+            margin-top: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        #benefits h2 {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        #benefits p {
+            font-size: 1rem;
+            color: #555;
+            line-height: 1.6;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #benefits ul {
+            list-style-type: none;
+            padding: 0;
+            margin-top: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        #benefits ul li {
+            background-color: #fff;
+            padding: 15px 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            width: calc(33% - 20px);
+            text-align: center;
+            font-size: 1.1rem;
+            color: #333;
+            animation-delay: 0.2s;
+        }
+
+        @media (max-width: 768px) {
+            #benefits ul li {
+                width: calc(50% - 20px);
+            }
+        }
+
+        @media (max-width: 480px) {
+            #benefits ul li {
+                width: 100%;
+            }
+        }
+
+        /* Centralizar os conteúdos no site */
+        header, .about-container, .whatsapp-button, footer {
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        footer {
+            margin-top: 30px;
+            font-size: 14px;
+            color: #777;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar fixa -->
+    <nav>
+        <ul>
+            <li><a href="#about">Sobre Mim</a></li>
+            <li><a href="#services">Nossos Serviços</a></li>
+            <li><a href="#benefits">Benefícios da Massoterapia</a></li>
+            <li><a href="#testimonials">Depoimentos</a></li>
+        </ul>
+    </nav>
+
+    <!-- Header principal -->
+    <header>
+        <h1>Bem-vindo ao Meu Espaço de Bem-Estar e Relaxamento</h1>
+        <p>Descubra um mundo de tranquilidade e equilíbrio com técnicas personalizadas de massoterapia.</p>
+    </header>
+
+    <!-- Seção "Sobre Mim" -->
+    <section id="about">
+        <div class="about-container">
+            <img class="about-img" src="perfil.jpg" alt="Minha Foto">
+            <h2>Sobre Mim</h2>
+            <p>Olá! Me chamo João Vitor, massoterapeuta dedicado a proporcionar alívio, relaxamento e bem-estar. Com um olhar atento e técnicas especializadas, meu objetivo é restaurar o equilíbrio entre corpo e mente, ajudando você a alcançar a sensação de leveza e tranquilidade.</p>
+        </div>
+    </section>
+
+    <!-- Seção "Benefícios da Massoterapia" -->
+    <section id="benefits">
+        <h2>Benefícios da Massoterapia</h2>
+        <p>A massoterapia oferece uma série de benefícios para o corpo e a mente, proporcionando alívio, bem-estar e equilíbrio. Veja alguns dos principais benefícios:</p>
+        <ul>
+            <li class="benefit-card">🎯 <strong>Redução do estresse e da ansiedade</strong> – Técnicas relaxantes que ajudam a acalmar a mente.</li>
+            <li class="benefit-card">💪 <strong>Alívio das tensões musculares</strong> – Relaxamento das áreas mais afetadas pela tensão.</li>
+            <li class="benefit-card">❤️ <strong>Melhora da circulação sanguínea</strong> – Estimula o fluxo sanguíneo e oxigenação dos tecidos.</li>
+            <li class="benefit-card">🌿 <strong>Estimulação do sistema imunológico</strong> – A massagem pode ajudar a fortalecer a defesa natural do corpo.</li>
+            <li class="benefit-card">🤸‍♂️ <strong>Aumento da flexibilidade e mobilidade</strong> – Melhora a amplitude de movimento das articulações.</li>
+            <li class="benefit-card">🌙 <strong>Melhora da qualidade do sono</strong> – Relaxamento profundo que facilita o descanso adequado.</li>
+            <li class="benefit-card">💆‍♀️ <strong>Alívio de dores crônicas e fadiga</strong> – Diminui a intensidade das dores persistentes.</li>
+        </ul>
+    </section>
+
+    <!-- Seção "Nossos Serviços" -->
+    <section id="services">
+        <h2>Nossos Serviços</h2>
+        <div class="service">
+            <img src="relaxante.jpg" alt="Massagem Relaxante">
+            <h3>Massagem Relaxante</h3>
+            <p>Redução do estresse e bem-estar.</p>
+        </div>
+        <div class="service">
+            <img src="sueca.jpg" alt="Massagem Sueca">
+            <h3>Massagem Sueca</h3>
+            <p>Melhora da circulação e alívio de tensões.</p>
+        </div>
+        <div class="service">
+            <img src="drenagem.jpg" alt="Drenagem Linfática">
+            <h3>Drenagem Linfática</h3>
+            <p>Eliminação de toxinas e redução de inchaço.</p>
+        </div>
+        <div class="service">
+            <img src="modeladora.jpg" alt="Massagem Modeladora">
+            <h3>Massagem Modeladora</h3>
+            <p>Redução de medidas e definição corporal.</p>
+        </div>
+        <div class="service">
+            <img src="pedras-quentes.jpg" alt="Massagem com Pedras Quentes">
+            <h3>Massagem com Pedras Quentes</h3>
+            <p>Relaxamento profundo e equilíbrio energético.</p>
+        </div>
+        <div class="service">
+            <img src="reflexologia.jpg" alt="Reflexologia Podal">
+            <h3>Reflexologia Podal</h3>
+            <p>Alívio do estresse e equilíbrio corporal através dos pés.</p>
+        </div>
+        <div class="service">
+            <img src="ventosaterapia.jpg" alt="Ventosaterapia">
+            <h3>Ventosaterapia</h3>
+            <p>Melhora da circulação e alívio das tensões musculares.</p>
+        </div>
+        <div class="service">
+            <img src="shiatsu.jpg" alt="Shiatsu">
+            <h3>Shiatsu</h3>
+            <p>Técnica japonesa que equilibra a energia do corpo.</p>
+        </div>
+    </section>
+
+    <!-- Botão do WhatsApp -->
+    <div class="whatsapp-button">
+        <a href="https://wa.me/5533999449751" target="_blank">
+            <img src="whatsapp-icon.png" alt="WhatsApp"> <span>Chame no WhatsApp</span>
+        </a>
+    </div>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>© 2025 Massoterapia | Todos os direitos reservados</p>
+    </footer>
+
+    <!-- Menção ao autor do ícone (não visível para os usuários) -->
+    <p style="display: none;">Icon by Fathema Khanom | Freepik</p>
+</body>
+
+</html>
